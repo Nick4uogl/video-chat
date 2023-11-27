@@ -76,6 +76,9 @@ const Room = () => {
           const item = peersRef.current.find((p) => p.peerID === payload.id);
           item.peer.signal(payload.signal);
         });
+      })
+      .catch((error) => {
+        console.error("Error accessing camera:", error);
       });
   }, []);
 
