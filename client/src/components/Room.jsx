@@ -43,7 +43,7 @@ const Room = () => {
   const { roomID } = useParams();
 
   useEffect(() => {
-    socketRef.current = io.connect("/");
+    socketRef.current = io.connect("http://localhost:8000");
     navigator.mediaDevices
       .getUserMedia({ video: videoConstraints, audio: true })
       .then((stream) => {
